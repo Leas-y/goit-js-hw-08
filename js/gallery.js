@@ -83,4 +83,12 @@ images.forEach(image => {
 
 gallery.addEventListener('click', event => {
   event.preventDefault();
+  const clickedImage = event.target.closest('.gallery-image');
+  if (!clickedImage) return;
+  const largeImageUrl = clickedImage.dataset.source;
+  const instance = basicLightbox.create(`
+    <img src="${largeImageUrl}" width="1112" height="640">
+`);
+
+  instance.show();
 });
