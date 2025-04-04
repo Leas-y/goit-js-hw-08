@@ -67,9 +67,9 @@ const images = [
 ];
 
 const gallery = document.querySelector('.gallery');
-
+let gal = '';
 images.forEach(image => {
-  gallery.innerHTML += `<li class="gallery-item">
+  gal += `<li class="gallery-item">
   <a class="gallery-link" href="${image.original}">
     <img
       class="gallery-image"
@@ -80,6 +80,8 @@ images.forEach(image => {
   </a>
 </li>`;
 });
+
+gallery.innerHTML = gal;
 
 gallery.addEventListener('click', event => {
   event.preventDefault();
